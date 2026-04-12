@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Nomadic Alchemy — Mobile Cocktail Bar & Private Event Bartenders in Nairobi. Weddings, corporate events and private parties. You set the scene, we set the bar.">
+<meta name="keywords" content="mobile bar nairobi, mobile cocktail bar kenya, event bartenders nairobi, wedding bar nairobi, corporate bar nairobi, nomadic alchemy">
+<meta property="og:title" content="Nomadic Alchemy — Mobile Cocktail Bar Nairobi">
+<meta property="og:description" content="Professional mobile bartenders for weddings, corporate events and private parties across Nairobi and beyond.">
+<meta property="og:url" content="https://nomadicalchemy.co.ke">
+<title>Nomadic Alchemy — Mobile Cocktail Bar Nairobi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #c9a96e;
+    --gold-light: #e8d5b0;
+    --dark: #1c1914;
+    --dark-2: #231f1a;
+    --dark-3: #2e2922;
+    --cream: #faf7f2;
+    --cream-2: #f2ece2;
+    --text-light: #f5f0e8;
+    --text-muted: #a89880;
+    --text-dark: #1a1a1a;
+    --text-mid: #666;
+    --serif: 'Cormorant Garamond', Georgia, serif;
+    --sans: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--serif); color: var(--text-dark); background: #fff; overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 20px 56px; background: var(--dark);
+    position: sticky; top: 0; z-index: 100;
+    border-bottom: 1px solid var(--dark-3);
+  }
+  .nav-logo {
+    font-family: var(--serif); font-size: 20px; font-weight: 400;
+    letter-spacing: 0.1em; color: var(--text-light);
+  }
+  .nav-logo span { color: var(--gold); font-style: italic; }
+  .nav-links { display: flex; gap: 40px; }
+  .nav-links a {
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--text-muted); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--gold); }
+  .nav-cta {
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; background: var(--gold); color: #fff;
+    padding: 11px 26px; border: none; cursor: pointer; transition: opacity 0.2s;
+  }
+  .nav-cta:hover { opacity: 0.88; }
+
+  /* HERO */
+  .hero {
+    background: var(--dark); min-height: 92vh;
+    display: flex; align-items: center; justify-content: center;
+    text-align: center; padding: 80px 48px;
+    position: relative; overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: radial-gradient(ellipse at 50% 60%, rgba(201,169,110,0.07) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-inner { max-width: 780px; position: relative; }
+  .hero-eyebrow {
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 28px;
+  }
+  .hero h1 {
+    font-family: var(--serif); font-size: 68px; font-weight: 300;
+    color: var(--text-light); line-height: 1.08; margin-bottom: 28px;
+  }
+  .hero h1 em { color: var(--gold); font-style: italic; font-weight: 300; }
+  .hero-sub {
+    font-family: var(--sans); font-size: 15px; color: var(--text-muted);
+    line-height: 1.8; margin-bottom: 44px; max-width: 520px;
+    margin-left: auto; margin-right: auto;
+  }
+  .hero-btns { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+  .btn-gold {
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; background: var(--gold); color: #fff;
+    padding: 15px 36px; border: none; cursor: pointer; transition: opacity 0.2s;
+    text-decoration: none; display: inline-block;
+  }
+  .btn-gold:hover { opacity: 0.88; }
+  .btn-outline {
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; background: transparent; color: var(--text-light);
+    padding: 15px 36px; border: 1px solid var(--dark-3); cursor: pointer;
+    transition: border-color 0.2s, color 0.2s; text-decoration: none; display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--gold); color: var(--gold); }
+  .hero-scroll {
+    position: absolute; bottom: 32px; left: 50%; transform: translateX(-50%);
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--dark-3); display: flex;
+    flex-direction: column; align-items: center; gap: 8px;
+  }
+  .hero-scroll::after {
+    content: ''; width: 1px; height: 40px; background: var(--dark-3);
+  }
+
+  /* GOLD RULE */
+  .gold-rule { height: 1px; background: var(--gold); opacity: 0.2; margin: 0; }
+
+  /* ABOUT */
+  .about { display: grid; grid-template-columns: 1fr 1fr; min-height: 480px; }
+  .about-img {
+    background: var(--dark-2); display: flex; align-items: center;
+    justify-content: center; min-height: 420px; position: relative; overflow: hidden;
+  }
+  .about-img-placeholder {
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  .about-img-placeholder svg { opacity: 0.2; }
+  .about-img-label {
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--gold); opacity: 0.5;
+  }
+  .about-text {
+    padding: 72px 64px; background: var(--cream);
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  .eyebrow {
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.26em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 18px;
+  }
+  .about-text h2 {
+    font-family: var(--serif); font-size: 40px; font-weight: 300;
+    color: var(--text-dark); margin-bottom: 24px; line-height: 1.2;
+  }
+  .about-text p {
+    font-family: var(--sans); font-size: 14px; color: var(--text-mid);
+    line-height: 1.85; margin-bottom: 16px;
+  }
+
+  /* HOW IT WORKS */
+  .how { background: var(--dark); padding: 88px 56px; }
+  .section-center { text-align: center; margin-bottom: 60px; }
+  .section-center h2 {
+    font-family: var(--serif); font-size: 42px; font-weight: 300;
+    color: var(--text-light); margin-bottom: 10px;
+  }
+  .section-center p {
+    font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--text-muted);
+  }
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2px; }
+  .step { background: var(--dark-2); padding: 40px 32px; }
+  .step-num {
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.22em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+  }
+  .step h3 {
+    font-family: var(--serif); font-size: 22px; font-weight: 400;
+    color: var(--text-light); margin-bottom: 12px;
+  }
+  .step p {
+    font-family: var(--sans); font-size: 13px; color: var(--text-muted);
+    line-height: 1.75;
+  }
+
+  /* SERVICES */
+  .services { background: var(--cream); padding: 88px 56px; }
+  .section-left { margin-bottom: 52px; }
+  .section-left h2 {
+    font-family: var(--serif); font-size: 42px; font-weight: 300;
+    color: var(--text-dark); margin-bottom: 8px;
+  }
+  .section-left p {
+    font-family: var(--sans); font-size: 13px; color: var(--text-mid);
+  }
+  .services-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2px; }
+  .svc {
+    background: #fff; padding: 40px 32px;
+    border: 1px solid #e8e0d4; transition: border-color 0.2s;
+  }
+  .svc:hover { border-color: var(--gold); }
+  .svc-num {
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--gold); margin-bottom: 20px;
+  }
+  .svc h3 {
+    font-family: var(--serif); font-size: 22px; font-weight: 400;
+    color: var(--text-dark); margin-bottom: 12px;
+  }
+  .svc p {
+    font-family: var(--sans); font-size: 13px; color: var(--text-mid);
+    line-height: 1.8;
+  }
+  .svc-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 20px; }
+  .tag {
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--gold);
+    border: 1px solid var(--gold-light); padding: 4px 10px;
+  }
+
+  /* REVIEWS */
+  .reviews { background: var(--dark); padding: 88px 56px; }
+  .reviews .section-center { margin-bottom: 56px; }
+  .reviews-grid { display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 2px; }
+  .review { background: var(--dark-2); padding: 36px 32px; }
+  .stars { color: var(--gold); font-size: 14px; letter-spacing: 3px; margin-bottom: 18px; }
+  .review blockquote {
+    font-family: var(--serif); font-size: 16px; font-weight: 300;
+    font-style: italic; color: #c8bfb4; line-height: 1.8; margin-bottom: 22px;
+  }
+  .review cite {
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.18em;
+    text-transform: uppercase; color: var(--text-muted); font-style: normal;
+  }
+
+  /* CONTACT */
+  .contact { background: var(--cream-2); padding: 88px 56px; }
+  .contact-inner { max-width: 680px; margin: 0 auto; }
+  .contact-inner h2 {
+    font-family: var(--serif); font-size: 42px; font-weight: 300;
+    color: var(--text-dark); text-align: center; margin-bottom: 10px;
+  }
+  .contact-sub {
+    font-family: var(--sans); font-size: 14px; color: var(--text-mid);
+    text-align: center; line-height: 1.75; margin-bottom: 48px;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
+  .field label {
+    font-family: var(--sans); font-size: 10px; letter-spacing: 0.2em;
+    text-transform: uppercase; color: #888;
+  }
+  .field input, .field select, .field textarea {
+    padding: 13px 16px; font-size: 14px; font-family: var(--sans);
+    border: 1px solid #ddd6cc; background: #fff; color: var(--text-dark);
+    outline: none; transition: border-color 0.2s; appearance: none;
+  }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    border-color: var(--gold);
+  }
+  .field textarea { height: 110px; resize: vertical; }
+  .submit-btn {
+    width: 100%; background: var(--gold); color: #fff;
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.2em;
+    text-transform: uppercase; padding: 17px; border: none; cursor: pointer;
+    transition: opacity 0.2s; margin-top: 6px;
+  }
+  .submit-btn:hover { opacity: 0.88; }
+  .whatsapp-btn {
+    width: 100%; background: var(--dark); color: var(--text-light);
+    font-family: var(--sans); font-size: 11px; letter-spacing: 0.18em;
+    text-transform: uppercase; padding: 15px; border: none; cursor: pointer;
+    margin-top: 10px; display: flex; align-items: center; justify-content: center;
+    gap: 10px; text-decoration: none; transition: opacity 0.2s;
+  }
+  .whatsapp-btn:hover { opacity: 0.88; }
+  .contact-info {
+    display: flex; justify-content: center; gap: 40px; margin-top: 36px;
+    padding-top: 36px; border-top: 1px solid #e0d8ce;
+  }
+  .contact-info a {
+    font-family: var(--sans); font-size: 12px; color: var(--text-mid);
+    text-decoration: none; letter-spacing: 0.08em;
+    transition: color 0.2s;
+  }
+  .contact-info a:hover { color: var(--gold); }
+  .contact-info span {
+    font-family: var(--sans); font-size: 12px; color: var(--text-mid);
+    letter-spacing: 0.08em;
+  }
+
+  /* FOOTER */
+  footer {
+    background: var(--dark); padding: 36px 56px;
+    display: flex; justify-content: space-between; align-items: center;
+    flex-wrap: wrap; gap: 16px; border-top: 1px solid var(--dark-3);
+  }
+  .footer-logo {
+    font-family: var(--serif); font-size: 17px; font-weight: 400;
+    color: var(--text-light); letter-spacing: 0.06em;
+  }
+  .footer-logo span { color: var(--gold); font-style: italic; }
+  .footer-links { display: flex; gap: 28px; }
+  .footer-links a {
+    font-family: var(--sans); font-size: 11px; color: #7a6e62;
+    text-decoration: none; letter-spacing: 0.1em; transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--gold); }
+  .footer-copy {
+    font-family: var(--sans); font-size: 11px; color: #4a4540;
+    letter-spacing: 0.06em;
+  }
+
+  /* RESPONSIVE */
+  @media (max-width: 900px) {
+    nav { padding: 18px 24px; }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 44px; }
+    .about { grid-template-columns: 1fr; }
+    .about-img { min-height: 260px; }
+    .about-text { padding: 48px 32px; }
+    .steps { grid-template-columns: 1fr; }
+    .services-grid { grid-template-columns: 1fr; }
+    .reviews-grid { grid-template-columns: 1fr; }
+    .form-row { grid-template-columns: 1fr; }
+    .how, .services, .reviews, .contact { padding: 64px 24px; }
+    footer { padding: 28px 24px; flex-direction: column; text-align: center; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-logo">Nomadic <span>Alchemy</span></div>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#services">Services</a>
+    <a href="#about">About</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <a href="#contact" class="nav-cta">Get a quote</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-inner">
+    <p class="hero-eyebrow">Mobile Cocktail Bar &middot; Nairobi, Kenya</p>
+    <h1>You set the scene,<br><em>we set the bar.</em></h1>
+    <p class="hero-sub">Professional mobile bartenders for weddings, corporate events and private parties across Nairobi and beyond. We bring the craft, the flair, and the drinks.</p>
+    <div class="hero-btns">
+      <a href="#contact" class="btn-gold">Book your event</a>
+      <a href="#services" class="btn-outline">View services</a>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<section class="about" id="about">
+  <div class="about-img">
+    <div class="about-img-placeholder">
+      <svg width="90" height="110" viewBox="0 0 90 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M8 18 L45 76 L82 18 Z" stroke="#c9a96e" stroke-width="1.2" fill="none"/>
+        <line x1="45" y1="76" x2="45" y2="96" stroke="#c9a96e" stroke-width="1.2"/>
+        <line x1="26" y1="96" x2="64" y2="96" stroke="#c9a96e" stroke-width="1.2"/>
+        <circle cx="45" cy="42" r="7" stroke="#c9a96e" stroke-width="0.8" fill="none"/>
+      </svg>
+      <span class="about-img-label">Add your photo here</span>
+    </div>
+  </div>
+  <div class="about-text">
+    <p class="eyebrow">Our story</p>
+    <h2>Born from craft<br>and connection</h2>
+    <p>Nomadic Alchemy started with a simple belief — great drinks make great memories. We take our mobile bar to events across Nairobi and beyond, setting up wherever the occasion calls.</p>
+    <p>Every cocktail menu is crafted to fit your vibe. Every bartender trained to perform. We don't just serve drinks — we create an experience your guests will talk about long after the night ends.</p>
+    <p style="font-style:italic; color:#c9a96e; font-family:'Cormorant Garamond',Georgia,serif; font-size:16px; margin-top:8px;">Raising the bar &mdash; one event at a time.</p>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<section class="how" id="how">
+  <div class="section-center">
+    <h2>How it works</h2>
+    <p>Three steps to your perfect bar experience</p>
+  </div>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">01 &mdash; Enquire</div>
+      <h3>Tell us about your event</h3>
+      <p>Fill out our enquiry form with your event details — date, guest count, venue and vibe. We'll respond within 24 hours with a tailored quote.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">02 &mdash; Plan</div>
+      <h3>We craft your menu</h3>
+      <p>We design a custom cocktail menu built around your event. Signature drinks, mocktails, themed creations — all tailored to you and your guests.</p>
+    </div>
+    <div class="step">
+      <div class="step-num">03 &mdash; Celebrate</div>
+      <h3>We handle the rest</h3>
+      <p>We set up, serve and break down. You enjoy the night. From first pour to last call — the bar is entirely in our hands.</p>
+    </div>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="section-left">
+    <p class="eyebrow">What we offer</p>
+    <h2>Our services</h2>
+    <p>Full-service mobile bartending for every occasion</p>
+  </div>
+  <div class="services-grid">
+    <div class="svc">
+      <div class="svc-num">01</div>
+      <h3>Weddings &amp; receptions</h3>
+      <p>Custom cocktail menus, full bar setup and breakdown, professional bartenders dressed to complement your theme and aesthetic.</p>
+      <div class="svc-tags">
+        <span class="tag">Custom menus</span>
+        <span class="tag">Full setup</span>
+        <span class="tag">Themed bars</span>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="svc-num">02</div>
+      <h3>Corporate events</h3>
+      <p>Product launches, end-of-year parties, team events. Branded cocktails, mocktails and smooth professional service for any crowd size.</p>
+      <div class="svc-tags">
+        <span class="tag">Branded drinks</span>
+        <span class="tag">Mocktails</span>
+        <span class="tag">Large groups</span>
+      </div>
+    </div>
+    <div class="svc">
+      <div class="svc-num">03</div>
+      <h3>Private parties</h3>
+      <p>Birthdays, sundowners, intimate gatherings. We bring the full bar experience to your home or venue of choice across Nairobi.</p>
+      <div class="svc-tags">
+        <span class="tag">Home setups</span>
+        <span class="tag">Sundowners</span>
+        <span class="tag">Any venue</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="gold-rule"></div>
+
+<section class="reviews">
+  <div class="section-center">
+    <h2>What clients say</h2>
+    <p>Experiences worth raising a glass to</p>
+  </div>
+  <div class="reviews-grid">
+    <div class="review">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"Nomadic Alchemy made our wedding reception absolutely unforgettable. Professional, creative and the cocktails were incredible."</blockquote>
+      <cite>— Sarah M., Wedding 2024</cite>
+    </div>
+    <div class="review">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"They showed up, set up beautifully and kept our guests entertained all night long. Could not recommend more highly."</blockquote>
+      <cite>— James K., Corporate Event 2024</cite>
+    </div>
+    <div class="review">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <blockquote>"The custom cocktail menu was the highlight of the whole evening. Every single guest was asking who did the bar."</blockquote>
+      <cite>— Amina W., Private Party 2024</cite>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="contact-inner">
+    <h2>Let's make it happen</h2>
+    <p class="contact-sub">Tell us about your event and we'll get back within 24 hours with a custom quote tailored to your occasion.</p>
+
+    <form action="https://formspree.io/f/bookings@nomadicalchemy.co.ke" method="POST">
+      <div class="form-row">
+        <div class="field">
+          <label>Your name</label>
+          <input type="text" name="name" placeholder="Jane Wanjiku" required />
+        </div>
+        <div class="field">
+          <label>Phone / WhatsApp</label>
+          <input type="tel" name="phone" placeholder="+254 7XX XXX XXX" required />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label>Event type</label>
+          <select name="event_type">
+            <option value="">Select event type</option>
+            <option>Wedding / reception</option>
+            <option>Corporate event</option>
+            <option>Private party</option>
+            <option>Birthday</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Event date</label>
+          <input type="text" name="event_date" placeholder="e.g. 14 June 2025" />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label>Expected guests</label>
+          <input type="text" name="guests" placeholder="e.g. 80 guests" />
+        </div>
+        <div class="field">
+          <label>Venue / location</label>
+          <input type="text" name="venue" placeholder="e.g. Karen, Nairobi" />
+        </div>
+      </div>
+      <div class="field">
+        <label>Tell us more</label>
+        <textarea name="message" placeholder="Vibe, theme, any specific drinks in mind, budget..."></textarea>
+      </div>
+      <input type="hidden" name="_subject" value="New event enquiry — Nomadic Alchemy" />
+      <input type="hidden" name="_replyto" value="bookings@nomadicalchemy.co.ke" />
+      <button type="submit" class="submit-btn">Send enquiry</button>
+    </form>
+
+    <a href="https://wa.me/254750566305?text=Hi%20Nomadic%20Alchemy!%20I'd%20like%20to%20enquire%20about%20booking%20the%20mobile%20bar%20for%20my%20event." class="whatsapp-btn">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        <path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.118 1.528 5.849L.057 23.886l6.196-1.625A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.663-.502-5.193-1.381l-.371-.221-3.853 1.011 1.029-3.752-.242-.385A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/>
+      </svg>
+      Chat on WhatsApp &mdash; +254 750 566 305
+    </a>
+
+    <div class="contact-info">
+      <a href="mailto:bookings@nomadicalchemy.co.ke">bookings@nomadicalchemy.co.ke</a>
+      <span>|</span>
+      <a href="https://www.instagram.com/nomadic.alchemy" target="_blank">@nomadic.alchemy</a>
+      <span>|</span>
+      <a href="https://wa.me/254750566305">+254 750 566 305</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">Nomadic <span>Alchemy</span></div>
+  <div class="footer-links">
+    <a href="https://www.instagram.com/nomadic.alchemy" target="_blank">Instagram</a>
+    <a href="mailto:bookings@nomadicalchemy.co.ke">Email</a>
+    <a href="https://wa.me/254750566305">WhatsApp</a>
+    <a href="#contact">Book now</a>
+  </div>
+  <div class="footer-copy">&copy; 2026 Nomadic Alchemy &mdash; Nairobi, Kenya</div>
+</footer>
+
+</body>
+</html>
