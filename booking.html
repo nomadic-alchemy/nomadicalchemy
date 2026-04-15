@@ -40,8 +40,15 @@ input[type=range]{width:100%;height:4px;background:linear-gradient(to right,var(
 input[type=range]::-webkit-slider-thumb{appearance:none;width:20px;height:20px;background:var(--gold);border-radius:50%;cursor:pointer;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.15)}
 input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--gold);border-radius:50%;cursor:pointer;border:2px solid #fff}
 .budget-labels{display:flex;justify-content:space-between;margin-top:6px;font-family:var(--sans);font-size:10px;color:#aaa;letter-spacing:0.06em}
-.submit-btn, .whatsapp-full-btn{width:100%;background:var(--gold);color:#fff;font-family:var(--sans);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:17px;border:none;cursor:pointer;transition:opacity 0.2s;margin-top:6px;display:block;text-align:center;text-decoration:none}
-.submit-btn:hover, .whatsapp-full-btn:hover{opacity:0.88}
+
+/* Main Form Button */
+.submit-btn{width:100%;background:var(--gold);color:#fff;font-family:var(--sans);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:17px;border:none;cursor:pointer;transition:opacity 0.2s;margin-top:6px;display:block;text-align:center;text-decoration:none}
+.submit-btn:hover{opacity:0.88}
+
+/* Increased size for WhatsApp Button */
+.whatsapp-full-btn{width:100%;background:var(--gold);color:#fff;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:22px;border:none;cursor:pointer;transition:opacity 0.2s;margin-top:10px;display:block;text-align:center;text-decoration:none}
+.whatsapp-full-btn:hover{opacity:0.88}
+
 .ux-note{text-align:center; font-size:13px; color:#aaa; margin-top:12px; font-family:var(--sans)}
 .gold-divider{height:1px;background:var(--gold);opacity:0.15;margin:40px 0}
 .alt-contact{text-align:center;font-family:var(--sans);font-size:13px;color:var(--text-mid)}
@@ -148,9 +155,11 @@ input[type="time"]::-webkit-calendar-picker-indicator{position:absolute;inset:0;
     <button type="submit" class="submit-btn">Send enquiry</button>
   </form>
 
+  <div class="gold-divider"></div>
+
   <p class="ux-note">Click the button below to enquire via WhatsApp. A message template will be ready for you to fill in and send.</p>
   
-  <a href="https://wa.me/254750566305?text=Hi%20Nomadic%20Alchemy%2C%20I%20just%20submitted%20a%20booking%20enquiry%20on%20your%20website.%20Click%20send%20to%20confirm!" 
+  <a href="https://wa.me/254750566305?text=Hello%20Nomadic%20Alchemy%20!%20%2C%20I%E2%80%99d%20like%20to%20enquire%20about%20a%20booking%0ABelow%20are%20the%20details%20%0A%0AName%20%3A%20%0AEvent%20type%20%3A%20%0AExpected%20guests%20%3A%20%0ALocation%20%3A%20%0AMore%20about%20the%20function%20%3A%20%0A%0AEngage%20me%20for%20further%20info%20%26%20a%20quote" 
      class="whatsapp-full-btn" target="_blank">
     Inquire via WhatsApp
   </a>
