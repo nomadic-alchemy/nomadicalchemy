@@ -5,149 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Your Event — Nomadic Alchemy</title>
     
-    <link rel="icon" type="image/png" href="favicon.png">
-    <link rel="apple-touch-icon" href="favicon.png">
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --gold: #c9a96e;
+            --gold-muted: #cdb38b;
             --dark: #1c1914;
-            --dark-3: #2e2922;
-            --cream-2: #f2ece2;
+            --cream: #f2ece2;
             --text-muted: #a89880;
-            --text-dark: #1a1a1a;
-            --text-mid: #666;
             --serif: 'Cormorant Garamond', Georgia, serif;
-            --sans: 'Jost', 'Helvetica Neue', Arial, sans-serif;
+            --sans: 'Jost', sans-serif;
         }
 
-        body { font-family: var(--sans); background: var(--cream-2); color: var(--text-dark); line-height: 1.6; }
+        body { background: var(--cream); font-family: var(--sans); color: #1a1a1a; line-height: 1.6; }
+        .page-body { max-width: 720px; margin: 0 auto; padding: 60px 24px; }
 
-        /* Navigation */
-        nav {
-            display: flex; justify-content: space-between; align-items: center;
-            padding: 12px 56px; background: var(--dark); position: sticky; top: 0; z-index: 100;
-        }
-        .nav-logo-img { height: 42px; width: auto; }
-        .back-link { font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--text-muted); text-decoration: none; }
+        /* Header */
+        .page-title { font-family: var(--serif); font-size: 52px; font-weight: 300; text-align: center; margin-bottom: 12px; }
+        .page-sub { font-size: 14px; color: #666; text-align: center; margin-bottom: 8px; }
+        .required-note { font-size: 11px; color: #888; text-align: center; margin-bottom: 40px; }
 
-        /* Layout */
-        .page-body { max-width: 720px; margin: 0 auto; padding: 72px 32px 88px; }
-        .page-title { font-family: var(--serif); font-size: 48px; font-weight: 300; text-align: center; margin-bottom: 12px; }
-        .page-sub { font-size: 14px; color: var(--text-mid); text-align: center; margin-bottom: 48px; }
-
-        /* Form Fields */
-        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
-        .field { display: flex; flex-direction: column; gap: 7px; margin-bottom: 14px; }
-        .field label { font-size: 10px; letter-spacing: 0.2em; text-transform: uppercase; color: #888; }
+        /* Form Grid */
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+        .field { display: flex; flex-direction: column; gap: 8px; }
+        .field label { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; font-weight: 500; }
+        
         .field input, .field select, .field textarea { 
-            padding: 13px 16px; font-size: 14px; border: 1px solid #ddd6cc; 
-            background: #fff; outline: none; border-radius: 0; 
+            padding: 14px; font-size: 14px; border: 1px solid #ddd6cc; 
+            background: #fff; outline: none; border-radius: 0; width: 100%;
+            font-family: var(--sans);
         }
         
-        /* Date Box - Clickable anywhere */
-        input[type="date"] { cursor: pointer; width: 100%; display: block; }
+        /* Time/Date specific */
+        input[type="date"], input[type="time"] { cursor: pointer; }
 
-        /* Slim Aesthetic Slider */
-        .budget-display { font-size: 15px; font-weight: 500; text-align: center; margin-bottom: 12px; }
+        .phone-wrap { display: flex; }
+        .phone-code { padding: 14px; border: 1px solid #ddd6cc; border-right: none; background: #f9f6f1; font-size: 14px; color: #444; }
+
+        /* Slim Slider */
+        .budget-section { margin: 30px 0; text-align: center; }
+        .budget-title { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #888; margin-bottom: 15px; }
+        .budget-display { font-size: 16px; font-weight: 500; margin-bottom: 10px; }
         .budget-display span { color: var(--gold); }
         
         input[type=range] { 
             width: 100%; height: 2px; background: #ddd6cc; 
-            appearance: none; outline: none; margin: 15px 0;
+            appearance: none; outline: none; margin: 10px 0;
         }
         input[type=range]::-webkit-slider-thumb { 
-            appearance: none; width: 12px; height: 12px; 
-            background: var(--dark); border: 2px solid var(--gold); 
-            border-radius: 50%; cursor: pointer; 
+            appearance: none; width: 14px; height: 14px; 
+            background: var(--gold-muted); border-radius: 50%; cursor: pointer; 
         }
+        .slider-labels { display: flex; justify-content: space-between; font-size: 10px; color: #aaa; margin-top: 5px; }
 
         /* Buttons */
         .submit-btn { 
-            width: 100%; background: var(--gold); color: #fff; 
-            letter-spacing: 0.2em; text-transform: uppercase; padding: 20px; 
-            border: none; cursor: pointer; margin-top: 10px; 
+            width: 100%; background: var(--gold-muted); color: #fff; 
+            letter-spacing: 0.15em; text-transform: uppercase; padding: 18px; 
+            border: none; cursor: pointer; font-size: 12px; font-weight: 500;
         }
         
-        .btn-separator { text-align: center; font-family: var(--serif); font-style: italic; margin: 24px 0; color: var(--text-muted); position: relative; }
-        .btn-separator::before, .btn-separator::after { content: ""; position: absolute; top: 50%; width: 35%; height: 1px; background: var(--gold); opacity: 0.2; }
-        .btn-separator::before { left: 0; } .btn-separator::after { right: 0; }
+        .ux-note { text-align: center; font-size: 11px; color: #999; margin: 20px 0 10px; }
 
-        .whatsapp-full-btn { 
-            width: 100%; background: var(--dark); color: #fff; 
-            font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; 
-            padding: 20px; text-decoration: none; display: flex; 
-            align-items: center; justify-content: center; gap: 12px; 
+        .whatsapp-btn { 
+            width: 100%; background: #161614; color: #fff; 
+            font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; 
+            padding: 18px; text-decoration: none; display: flex; 
+            align-items: center; justify-content: center; gap: 10px; 
         }
-        .whatsapp-icon { fill: #25D366; width: 18px; height: 18px; }
+        .whatsapp-icon { width: 16px; height: 16px; fill: #25D366; }
 
-        @media(max-width: 700px) {
-            nav { padding: 12px 24px; }
-            .form-row { grid-template-columns: 1fr; }
-        }
+        @media(max-width: 600px) { .form-row { grid-template-columns: 1fr; } }
     </style>
 </head>
 <body>
 
-<nav>
-    <a href="index.html"><img src="favicon.png" alt="Logo" class="nav-logo-img"></a>
-    <a href="index.html" class="back-link">Back to home</a>
-</nav>
-
 <div class="page-body">
     <h1 class="page-title">Let's make it happen</h1>
-    <p class="page-sub">Tell us about your event and we'll get back within 24 hours.</p>
+    <p class="page-sub">Tell us about your event and we'll get back within 24 hours with a custom quote.</p>
+    <p class="required-note">Fields marked * are required</p>
 
     <form action="https://api.web3forms.com/submit" method="POST">
         <input type="hidden" name="access_key" value="9837f6a8-35b7-4565-80e7-746e106ca202">
         
         <div class="form-row">
             <div class="field">
-                <label>Your name</label>
-                <input type="text" name="name" placeholder="Jose Cuervo">
+                <label>Your Name *</label>
+                <input type="text" name="name" placeholder="Jose Cuervo" required>
             </div>
             <div class="field">
-                <label>Event date</label>
-                <input type="date" name="event_date" id="eventDate" onclick="this.showPicker()">
+                <label>Phone / WhatsApp *</label>
+                <div class="phone-wrap">
+                    <div class="phone-code">+</div>
+                    <input type="tel" name="phone" placeholder="254 7XX XXX XXX" required style="border-left:none;">
+                </div>
             </div>
         </div>
 
-        <div class="field">
-            <label>Approximate budget</label>
-            <div class="budget-display">KES <span id="budgetVal">49,500</span></div>
-            <input type="range" id="budgetSlider" name="budget_range" min="49500" max="1000000" value="49500" step="500">
+        <div class="form-row">
+            <div class="field">
+                <label>Event Type</label>
+                <select name="event_type">
+                    <option>Private party</option>
+                    <option>Wedding</option>
+                    <option>Corporate</option>
+                    <option>Mixology Workshop</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Event Date *</label>
+                <input type="date" name="event_date" id="eventDate" required onclick="this.showPicker()">
+            </div>
         </div>
 
-        <button type="submit" class="submit-btn">Send enquiry</button>
+        <div class="form-row">
+            <div class="field">
+                <label>Start Time</label>
+                <input type="time" name="start_time" onclick="this.showPicker()">
+            </div>
+            <div class="field">
+                <label>End Time</label>
+                <input type="time" name="end_time" onclick="this.showPicker()">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="field">
+                <label>Expected Guests</label>
+                <input type="text" name="guests" placeholder="e.g. 80">
+            </div>
+            <div class="field">
+                <label>Venue / Location *</label>
+                <input type="text" name="venue" placeholder="e.g. Karen, Nairobi" required>
+            </div>
+        </div>
+
+        <div class="budget-section">
+            <p class="budget-title">Approximate Budget</p>
+            <div class="budget-display">KES <span id="budgetVal">49,500</span></div>
+            <input type="range" id="budgetSlider" name="budget_range" min="49500" max="1000000" value="49500" step="500">
+            <div class="slider-labels">
+                <span>KES 49,500</span>
+                <span>KES 1,000,000</span>
+            </div>
+        </div>
+
+        <div class="field" style="margin-bottom: 30px;">
+            <label>Tell Us More</label>
+            <textarea name="message" placeholder="Vibe, theme, any specific drinks in mind..." style="height: 100px;"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Send Enquiry</button>
     </form>
 
-    <div class="btn-separator">or</div>
+    <p class="ux-note">Tap WhatsApp and press send to confirm your booking request.</p>
     
-    <a href="https://wa.me/254750566305?text=Hello%20Nomadic%20Alchemy%20!%20%2C%20I%E2%80%99d%20like%20to%20enquire%20about%20a%20booking%0ABelow%20are%20the%20details%20%0A%0AName%20%3A%20%0AEvent%20type%20%3A%20%0AExpected%20guests%20%3A%20%0ALocation%20%3A%20%0AMore%20about%20the%20function%20%3A%20%0A%0AEngage%20me%20for%20further%20info%20%26%20a%20quote....." class="whatsapp-full-btn" target="_blank">
+    <a href="https://wa.me/254750566305?text=Hello%20Nomadic%20Alchemy%20!%20%2C%20I%E2%80%99d%20like%20to%20enquire%20about%20a%20booking%0ABelow%20are%20the%20details%20%0A%0AName%20%3A%20%0AEvent%20type%20%3A%20%0AExpected%20guests%20%3A%20%0ALocation%20%3A%20%0AMore%20about%20the%20function%20%3A%20%0A%0AEngage%20me%20for%20further%20info%20%26%20a%20quote....." class="whatsapp-btn" target="_blank">
         <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.118 1.528 5.849L.057 23.886l6.196-1.625A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.663-.502-5.193-1.381l-.371-.221-3.853 1.011 1.029-3.752-.242-.385A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        Inquire via WhatsApp
+        CONFIRM BOOKING VIA WHATSAPP
     </a>
 </div>
 
 <script>
-    // Budget Slider UI
+    // Slider functionality
     const slider = document.getElementById('budgetSlider');
     const display = document.getElementById('budgetVal');
 
     slider.addEventListener('input', function() {
-        const val = Number(this.value).toLocaleString();
-        display.textContent = val;
-        
-        // Aesthetic progress track
+        display.textContent = Number(this.value).toLocaleString();
         const pct = ((this.value - 49500) / (1000000 - 49500)) * 100;
         this.style.background = `linear-gradient(to right, #c9a96e ${pct}%, #ddd6cc ${pct}%)`;
     });
 
-    // Set min date to today
+    // Min date constraint
     document.getElementById('eventDate').setAttribute('min', new Date().toISOString().split('T')[0]);
 </script>
 
