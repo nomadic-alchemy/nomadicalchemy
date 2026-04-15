@@ -41,7 +41,6 @@ input[type=range]::-webkit-slider-thumb{appearance:none;width:20px;height:20px;b
 input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--gold);border-radius:50%;cursor:pointer;border:2px solid #fff}
 .budget-labels{display:flex;justify-content:space-between;margin-top:6px;font-family:var(--sans);font-size:10px;color:#aaa;letter-spacing:0.06em}
 
-/* Button Styling */
 .submit-btn{width:100%;background:var(--gold);color:#fff;font-family:var(--sans);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:20px;border:none;cursor:pointer;transition:opacity 0.2s;display:block;text-align:center;text-decoration:none}
 .submit-btn:hover{opacity:0.88}
 
@@ -130,8 +129,8 @@ input[type="time"]::-webkit-calendar-picker-indicator{position:absolute;inset:0;
 
     <div class="form-row">
       <div class="field">
-        <label>Expected guests</label>
-        <input type="number" name="guests" placeholder="e.g. 80" min="1" />
+        <label>Expected guests <span class="req">*</span></label>
+        <input type="number" name="guests" placeholder="e.g. 80" min="1" required />
       </div>
       <div class="field">
         <label>Venue / location <span class="req">*</span></label>
