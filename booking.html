@@ -36,20 +36,24 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 5
 .budget-wrap{padding:4px 0}
 .budget-display{font-family:var(--sans);font-size:15px;color:var(--text-dark);font-weight:500;margin-bottom:14px;text-align:center}
 .budget-display span{color:var(--gold)}
-input[type=range]{width:100%;height:4px;background:linear-gradient(to right,var(--gold) 0%,var(--gold) 2%,#ddd6cc 2%,#ddd6cc 100%);border:none;outline:none;cursor:pointer;appearance:none;border-radius:2px;padding:0}
+input[type=range]{width:100%;height:4px;background:linear-gradient(to right,--gold 0%,--gold 2%,#ddd6cc 2%,#ddd6cc 100%);border:none;outline:none;cursor:pointer;appearance:none;border-radius:2px;padding:0}
 input[type=range]::-webkit-slider-thumb{appearance:none;width:20px;height:20px;background:var(--gold);border-radius:50%;cursor:pointer;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.15)}
 input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--gold);border-radius:50%;cursor:pointer;border:2px solid #fff}
 .budget-labels{display:flex;justify-content:space-between;margin-top:6px;font-family:var(--sans);font-size:10px;color:#aaa;letter-spacing:0.06em}
 
-/* Main Form Button */
-.submit-btn{width:100%;background:var(--gold);color:#fff;font-family:var(--sans);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:17px;border:none;cursor:pointer;transition:opacity 0.2s;margin-top:6px;display:block;text-align:center;text-decoration:none}
+/* Button Styling */
+.submit-btn{width:100%;background:var(--gold);color:#fff;font-family:var(--sans);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:20px;border:none;cursor:pointer;transition:opacity 0.2s;display:block;text-align:center;text-decoration:none}
 .submit-btn:hover{opacity:0.88}
 
-/* Increased size for WhatsApp Button */
-.whatsapp-full-btn{width:100%;background:var(--gold);color:#fff;font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:22px;border:none;cursor:pointer;transition:opacity 0.2s;margin-top:10px;display:block;text-align:center;text-decoration:none}
-.whatsapp-full-btn:hover{opacity:0.88}
+.btn-separator{text-align:center;font-family:var(--serif);font-style:italic;font-size:14px;color:var(--text-muted);margin:12px 0;position:relative}
+.btn-separator::before, .btn-separator::after{content:"";position:absolute;top:50%;width:40%;height:1px;background:var(--gold);opacity:0.15}
+.btn-separator::before{left:0}.btn-separator::after{right:0}
 
-.ux-note{text-align:center; font-size:13px; color:#aaa; margin-top:12px; font-family:var(--sans)}
+.whatsapp-full-btn{width:100%;background:var(--dark);color:#fff;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:20px;border:none;cursor:pointer;transition:opacity 0.2s;display:flex;align-items:center;justify-content:center;gap:12px;text-align:center;text-decoration:none}
+.whatsapp-full-btn:hover{opacity:0.88}
+.whatsapp-icon{fill:#25D366;width:18px;height:18px}
+
+.ux-note{text-align:center; font-size:12px; color:#aaa; margin-top:16px; font-family:var(--sans); letter-spacing:0.02em}
 .gold-divider{height:1px;background:var(--gold);opacity:0.15;margin:40px 0}
 .alt-contact{text-align:center;font-family:var(--sans);font-size:13px;color:var(--text-mid)}
 .alt-contact a{color:var(--gold);text-decoration:none}
@@ -155,16 +159,15 @@ input[type="time"]::-webkit-calendar-picker-indicator{position:absolute;inset:0;
     <button type="submit" class="submit-btn">Send enquiry</button>
   </form>
 
-  <div class="gold-divider"></div>
-
-  <p class="ux-note">Click the button below to enquire via WhatsApp. A message template will be ready for you to fill in and send.</p>
+  <div class="btn-separator">or</div>
   
   <a href="https://wa.me/254750566305?text=Hello%20Nomadic%20Alchemy%20!%20%2C%20I%E2%80%99d%20like%20to%20enquire%20about%20a%20booking%0ABelow%20are%20the%20details%20%0A%0AName%20%3A%20%0AEvent%20type%20%3A%20%0AExpected%20guests%20%3A%20%0ALocation%20%3A%20%0AMore%20about%20the%20function%20%3A%20%0A%0AEngage%20me%20for%20further%20info%20%26%20a%20quote" 
      class="whatsapp-full-btn" target="_blank">
+    <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.118 1.528 5.849L.057 23.886l6.196-1.625A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.663-.502-5.193-1.381l-.371-.221-3.853 1.011 1.029-3.752-.242-.385A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
     Inquire via WhatsApp
   </a>
 
-  <p class="ux-note">Tap WhatsApp and press send to start your booking request.</p>
+  <p class="ux-note">Tap WhatsApp and press send to confirm your booking request.</p>
 
   <div class="gold-divider"></div>
   <div class="alt-contact">
@@ -194,13 +197,6 @@ function updateSlider(val){
 
 slider.addEventListener('input', function(){ updateSlider(this.value); });
 updateSlider(slider.value);
-
-document.querySelectorAll('.time-wrap input[type=time]').forEach(function(el){
-  el.addEventListener('click', function(){ this.showPicker && this.showPicker(); });
-});
-document.querySelectorAll('.date-wrap input[type=date]').forEach(function(el){
-  el.addEventListener('click', function(){ this.showPicker && this.showPicker(); });
-});
 </script>
 </body>
 </html>
