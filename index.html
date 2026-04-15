@@ -6,52 +6,6 @@
 <meta name="description" content="Nomadic Alchemy — Mobile Bar Service, Mixology Workshops and Cocktail Menu Consulting in Nairobi, Kenya.">
 <meta name="keywords" content="mobile bar nairobi, mobile cocktail bar kenya, event bartenders nairobi, wedding bar nairobi, corporate bar nairobi, mixology workshops nairobi, nomadic alchemy">
 <title>Nomadic Alchemy — Mobile Bar Service Nairobi</title>
-<link rel="icon" type="image/png" href="Screenshot 2026-04-15 030411.png">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-:root{--gold:#c9a96e;--gold-light:#e8d5b0;--dark:#1c1914;--dark-2:#231f1a;--dark-3:#2e2922;--cream:#faf7f2;--cream-2:#f2ece2;--text-light:#f5f0e8;--text-muted:#a89880;--text-dark:#1a1a1a;--text-mid:#666;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost','Helvetica Neue',Arial,sans-serif}
-html{scroll-behavior:smooth}
-body{font-family:var(--serif);color:var(--text-dark);background:#fff;overflow-x:hidden}
-
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 56px;background:var(--dark);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--dark-3)}
-.nav-logo{font-family:var(--serif);font-size:20px;font-weight:400;letter-spacing:0.1em;color:var(--text-light)}
-.nav-logo span{color:var(--gold);font-style:italic}
-.nav-links{display:flex;gap:40px}
-.nav-links a{font-family:var(--sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color 0.2s}
-.nav-links a:hover{color:var(--gold)}
-.nav-cta{font-family:var(--sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;background:var(--gold);color:#fff;padding:11px 26px;border:none;cursor:pointer;transition:opacity 0.2s;text-decoration:none;display:inline-block}
-.nav-cta:hover{opacity:0.88}
-.nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
-.nav-hamburger span{display:block;width:24px;height:1px;background:var(--text-muted)}
-.mobile-menu{display:none;position:absolute;top:100%;left:0;right:0;background:var(--dark);border-top:1px solid var(--dark-3);padding:24px 32px;flex-direction:column;gap:20px;z-index:99}
-.mobile-menu.open{display:flex}
-.mobile-menu a{font-family:var(--sans);font-size:12px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);text-decoration:none}
-
-.hero{position:relative;min-height:92vh;display:flex;flex-direction:column;overflow:hidden;background-image:url('data:image/jpeg;base64,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');background-size:cover;background-position:center}
-</style>
-</head>
-<body>
-<nav>
-<div class="nav-logo">NOMADIC <span>ALCHEMY</span></div>
-<button class="nav-hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
-<div class="nav-links">
-<a href="#about">The Alchemy</a>
-<a href="#services">Services</a>
-<a href="#experience">The Experience</a>
-<a href="#contact">Contact</a>
-</div>
-<a href="#contact" class="nav-cta">Book a Bar</a>
-<div class="mobile-menu"><!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="Nomadic Alchemy — Mobile Bar Service, Mixology Workshops and Cocktail Menu Consulting in Nairobi, Kenya.">
-<meta name="keywords" content="mobile bar nairobi, mobile cocktail bar kenya, event bartenders nairobi, wedding bar nairobi, corporate bar nairobi, mixology workshops nairobi, nomadic alchemy">
-<title>Nomadic Alchemy — Mobile Bar Service Nairobi</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
@@ -279,25 +233,5 @@ footer{background:var(--dark);padding:36px 56px;display:grid;grid-template-colum
   </div>
 </footer>
 
-</body>
-</html>
-
-<a href="#about">The Alchemy</a>
-<a href="#services">Services</a>
-<a href="#experience">The Experience</a>
-<a href="#contact">Contact</a>
-</div>
-</nav>
-
-<section class="hero">
-</section>
-
-<script>
-const hamburger = document.querySelector('.nav-hamburger');
-const mobileMenu = document.querySelector('.mobile-menu');
-hamburger.addEventListener('click', () => {
-    mobileMenu.classList.toggle('open');
-});
-</script>
 </body>
 </html>
