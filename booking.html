@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book Your Event — Nomadic Alchemy</title>
     
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
     
@@ -39,7 +42,6 @@
             font-family: var(--sans);
         }
         
-        /* Time/Date specific */
         input[type="date"], input[type="time"] { cursor: pointer; }
 
         .phone-wrap { display: flex; }
@@ -109,10 +111,14 @@
             <div class="field">
                 <label>Event Type</label>
                 <select name="event_type">
+                    <option value="">Select event type</option>
+                    <option>Wedding / reception</option>
+                    <option>Corporate event</option>
                     <option>Private party</option>
-                    <option>Wedding</option>
-                    <option>Corporate</option>
-                    <option>Mixology Workshop</option>
+                    <option>Birthday</option>
+                    <option>Mixology workshop</option>
+                    <option>Menu consulting</option>
+                    <option>Other</option>
                 </select>
             </div>
             <div class="field">
@@ -170,7 +176,6 @@
 </div>
 
 <script>
-    // Slider functionality
     const slider = document.getElementById('budgetSlider');
     const display = document.getElementById('budgetVal');
 
@@ -180,7 +185,6 @@
         this.style.background = `linear-gradient(to right, #c9a96e ${pct}%, #ddd6cc ${pct}%)`;
     });
 
-    // Min date constraint
     document.getElementById('eventDate').setAttribute('min', new Date().toISOString().split('T')[0]);
 </script>
 
