@@ -1,80 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book Your Event — Nomadic Alchemy</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-:root{--gold:#c9a96e;--gold-light:#e8d5b0;--dark:#1c1914;--dark-3:#2e2922;--cream-2:#f2ece2;--text-light:#f5f0e8;--text-muted:#a89880;--text-dark:#1a1a1a;--text-mid:#666;--serif:'Cormorant Garamond',Georgia,serif;--sans:'Jost','Helvetica Neue',Arial,sans-serif}
-html{scroll-behavior:smooth}
-body{font-family:var(--sans);background:var(--cream-2);color:var(--text-dark)}
-nav{display:flex;justify-content:space-between;align-items:center;padding:20px 56px;background:var(--dark);position:sticky;top:0;z-index:100;border-bottom:1px solid var(--dark-3)}
-.nav-logo{font-family:var(--serif);font-size:20px;font-weight:400;letter-spacing:0.1em;color:var(--text-light);text-decoration:none}
-.nav-logo span{color:var(--gold);font-style:italic}
-.back-link{font-family:var(--sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);text-decoration:none;transition:color 0.2s}
-.back-link:hover{color:var(--gold)}
-.page-body{max-width:720px;margin:0 auto;padding:72px 32px 88px}
-.page-title{font-family:var(--serif);font-size:48px;font-weight:300;color:var(--text-dark);text-align:center;margin-bottom:12px}
-.page-sub{font-family:var(--sans);font-size:14px;color:var(--text-mid);text-align:center;line-height:1.75;margin-bottom:10px}
-.required-note{font-family:var(--sans);font-size:11px;color:var(--text-mid);text-align:center;margin-bottom:48px;letter-spacing:0.04em}
-.required-note span{color:var(--gold)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
-.field label{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#888}
-.field label .req{color:var(--gold);margin-left:2px}
-.phone-wrap{display:flex}
-.phone-code{padding:13px 12px;font-size:14px;font-family:var(--sans);border:1px solid #ddd6cc;border-right:none;background:#f9f6f1;color:var(--text-dark);white-space:nowrap;display:flex;align-items:center;cursor:text}
-.field input,.field select,.field textarea{padding:13px 16px;font-size:14px;font-family:var(--sans);border:1px solid #ddd6cc;background:#fff;color:var(--text-dark);outline:none;transition:border-color 0.2s;appearance:none;width:100%;cursor:pointer}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
-.phone-input{border-left:none!important;flex:1;cursor:text!important}
-.field textarea{height:110px;resize:vertical;cursor:text}
-.date-wrap,.time-wrap{position:relative}
-.date-wrap input,.time-wrap input{cursor:pointer}
-.budget-wrap{padding:4px 0}
-.budget-display{font-family:var(--sans);font-size:15px;color:var(--text-dark);font-weight:500;margin-bottom:14px;text-align:center}
-.budget-display span{color:var(--gold)}
-input[type=range]{width:100%;height:4px;background:linear-gradient(to right,var(--gold) 0%,var(--gold) 2%,#ddd6cc 2%,#ddd6cc 100%);border:none;outline:none;cursor:pointer;appearance:none;border-radius:2px;padding:0}
-input[type=range]::-webkit-slider-thumb{appearance:none;width:20px;height:20px;background:var(--gold);border-radius:50%;cursor:pointer;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.15)}
-input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--gold);border-radius:50%;cursor:pointer;border:2px solid #fff}
-.budget-labels{display:flex;justify-content:space-between;margin-top:6px;font-family:var(--sans);font-size:10px;color:#aaa;letter-spacing:0.06em}
-
-.submit-btn{width:100%;background:var(--gold);color:#fff;font-family:var(--sans);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:20px;border:none;cursor:pointer;transition:opacity 0.2s;display:block;text-align:center;text-decoration:none}
-.submit-btn:hover{opacity:0.88}
-
-.btn-separator{text-align:center;font-family:var(--serif);font-style:italic;font-size:14px;color:var(--text-muted);margin:12px 0;position:relative}
-.btn-separator::before, .btn-separator::after{content:"";position:absolute;top:50%;width:40%;height:1px;background:var(--gold);opacity:0.15}
-.btn-separator::before{left:0}.btn-separator::after{right:0}
-
-.whatsapp-full-btn{width:100%;background:var(--dark);color:#fff;font-family:var(--sans);font-size:11px;font-weight:500;letter-spacing:0.2em;text-transform:uppercase;padding:20px;border:none;cursor:pointer;transition:opacity 0.2s;display:flex;align-items:center;justify-content:center;gap:12px;text-align:center;text-decoration:none}
-.whatsapp-full-btn:hover{opacity:0.88}
-.whatsapp-icon{fill:#25D366;width:18px;height:18px}
-
-.ux-note{text-align:center; font-size:12px; color:#aaa; margin-top:16px; font-family:var(--sans); letter-spacing:0.02em}
-.gold-divider{height:1px;background:var(--gold);opacity:0.15;margin:40px 0}
-.alt-contact{text-align:center;font-family:var(--sans);font-size:13px;color:var(--text-mid)}
-.alt-contact a{color:var(--gold);text-decoration:none}
-input[type="date"]::-webkit-calendar-picker-indicator,
-input[type="time"]::-webkit-calendar-picker-indicator{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
-@media(max-width:700px){nav{padding:18px 24px}.page-body{padding:48px 24px 72px}.form-row{grid-template-columns:1fr}.page-title{font-size:36px}}
-</style>
-</head>
-<body>
-<nav>
-  <a href="index.html" class="nav-logo">Nomadic <span>Alchemy</span></a>
-  <a href="index.html" class="back-link">Back to home</a>
-</nav>
-
-<div class="page-body">
-  <h1 class="page-title">Let's make it happen</h1>
-  <p class="page-sub">Tell us about your event and we'll get back within 24 hours with a custom quote.</p>
-  <p class="required-note">Fields marked <span>*</span> are required</p>
-
-  <form action="https://api.web3forms.com/submit" method="POST">
+<form action="https://api.web3forms.com/submit" method="POST">
     <input type="hidden" name="access_key" value="9837f6a8-35b7-4565-80e7-746e106ca202">
-    <input type="hidden" name="redirect" value="https://linktr.ee/Nomadicalchemy">
+    <input type="hidden" name="redirect" value="https://nomadicalchemy.co.ke/thank-you.html">
     <input type="hidden" name="subject" value="New event enquiry — Nomadic Alchemy">
     <input type="hidden" name="from_name" value="Nomadic Alchemy Booking Bot">
 
@@ -110,7 +36,6 @@ input[type="time"]::-webkit-calendar-picker-indicator{position:absolute;inset:0;
         <label>Event date <span class="req">*</span></label>
         <div class="date-wrap">
           <input type="date" name="event_date" id="eventDate" required />
-          <input type="date" name="event_date" id="eventDateOverlay" style="position:absolute;inset:0;opacity:0;width:100%;cursor:pointer" />
         </div>
       </div>
     </div>
@@ -142,46 +67,4 @@ input[type="time"]::-webkit-calendar-picker-indicator{position:absolute;inset:0;
     </div>
 
     <button type="submit" class="submit-btn">Send enquiry</button>
-  </form>
-
-  <div class="btn-separator">or</div>
-  
-  <a href="https://wa.me/254750566305?text=Hello%20Nomadic%20Alchemy%20!%20%2C%20I%E2%80%99d%20like%20to%20enquire%20about%20a%20booking%0ABelow%20are%20the%20details%20%0A%0AName%20%3A%20%0AEvent%20type%20%3A%20%0AExpected%20guests%20%3A%20%0ALocation%20%3A%20%0AMore%20about%20the%20function%20%3A%20%0A%0AEngage%20me%20for%20further%20info%20%26%20a%20quote" 
-     class="whatsapp-full-btn" target="_blank">
-    <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.118 1.528 5.849L.057 23.886l6.196-1.625A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.663-.502-5.193-1.381l-.371-.221-3.853 1.011 1.029-3.752-.242-.385A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-    Inquire via WhatsApp
-  </a>
-
-  <p class="ux-note">Tap WhatsApp and press send to confirm your booking request.</p>
-
-  <div class="gold-divider"></div>
-  <div class="alt-contact">
-    Prefer email? <a href="mailto:bookings@nomadicalchemy.co.ke">bookings@nomadicalchemy.co.ke</a>
-  </div>
-</div>
-
-<script>
-const today = new Date().toISOString().split('T')[0];
-document.getElementById('eventDate').setAttribute('min', today);
-document.getElementById('eventDateOverlay').setAttribute('min', today);
-document.getElementById('eventDateOverlay').addEventListener('change', function(){
-  document.getElementById('eventDate').value = this.value;
-});
-
-const slider = document.getElementById('budgetSlider');
-const display = document.getElementById('budgetVal');
-const hidden = document.getElementById('budgetHidden');
-
-function updateSlider(val){
-  const min = 49500, max = 1000000;
-  const pct = ((val - min) / (max - min)) * 100;
-  slider.style.background = `linear-gradient(to right, #c9a96e 0%, #c9a96e ${pct}%, #ddd6cc ${pct}%, #ddd6cc 100%)`;
-  display.textContent = Number(val).toLocaleString();
-  hidden.value = 'KES ' + Number(val).toLocaleString();
-}
-
-slider.addEventListener('input', function(){ updateSlider(this.value); });
-updateSlider(slider.value);
-</script>
-</body>
-</html>
+</form>
