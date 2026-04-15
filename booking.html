@@ -19,37 +19,12 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 5
 .page-body{max-width:720px;margin:0 auto;padding:72px 32px 88px}
 .page-title{font-family:var(--serif);font-size:48px;font-weight:300;color:var(--text-dark);text-align:center;margin-bottom:12px}
 .page-sub{font-family:var(--sans);font-size:14px;color:var(--text-mid);text-align:center;line-height:1.75;margin-bottom:10px}
-.required-note{font-family:var(--sans);font-size:11px;color:var(--text-mid);text-align:center;margin-bottom:48px;letter-spacing:0.04em}
-.required-note span{color:var(--gold)}
-.form-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:14px}
-.field{display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
-.field label{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:#888}
-.field label .req{color:var(--gold);margin-left:2px}
-.phone-wrap{display:flex}
-.phone-code{padding:13px 12px;font-size:14px;font-family:var(--sans);border:1px solid #ddd6cc;border-right:none;background:#f9f6f1;color:var(--text-dark);white-space:nowrap;display:flex;align-items:center;cursor:text}
-.field input,.field select,.field textarea{padding:13px 16px;font-size:14px;font-family:var(--sans);border:1px solid #ddd6cc;background:#fff;color:var(--text-dark);outline:none;transition:border-color 0.2s;appearance:none;width:100%;cursor:pointer}
-.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--gold)}
-.phone-input{border-left:none!important;flex:1;cursor:text!important}
-.field textarea{height:110px;resize:vertical;cursor:text}
-.date-wrap,.time-wrap{position:relative}
-.date-wrap input,.time-wrap input{cursor:pointer}
-.budget-wrap{padding:4px 0}
-.budget-display{font-family:var(--sans);font-size:15px;color:var(--text-dark);font-weight:500;margin-bottom:14px;text-align:center}
-.budget-display span{color:var(--gold)}
-input[type=range]{width:100%;height:4px;background:linear-gradient(to right,var(--gold) 0%,var(--gold) 2%,#ddd6cc 2%,#ddd6cc 100%);border:none;outline:none;cursor:pointer;appearance:none;border-radius:2px;padding:0}
-input[type=range]::-webkit-slider-thumb{appearance:none;width:20px;height:20px;background:var(--gold);border-radius:50%;cursor:pointer;border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,0.15)}
-input[type=range]::-moz-range-thumb{width:20px;height:20px;background:var(--gold);border-radius:50%;cursor:pointer;border:2px solid #fff}
-.budget-labels{display:flex;justify-content:space-between;margin-top:6px;font-family:var(--sans);font-size:10px;color:#aaa;letter-spacing:0.06em}
-.submit-btn{width:100%;background:var(--gold);color:#fff;font-family:var(--sans);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:17px;border:none;cursor:pointer;transition:opacity 0.2s;margin-top:6px}
+.submit-btn{width:100%;background:var(--gold);color:#fff;font-family:var(--sans);font-size:11px;letter-spacing:0.2em;text-transform:uppercase;padding:17px;border:none;cursor:pointer;transition:opacity 0.2s;margin-top:20px;display:block;text-align:center;text-decoration:none}
 .submit-btn:hover{opacity:0.88}
-.whatsapp-btn{width:100%;background:var(--dark);color:var(--text-light);font-family:var(--sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;padding:15px;border:none;cursor:pointer;margin-top:10px;display:flex;align-items:center;justify-content:center;gap:10px;text-decoration:none;transition:opacity 0.2s}
-.whatsapp-btn:hover{opacity:0.88}
 .gold-divider{height:1px;background:var(--gold);opacity:0.15;margin:40px 0}
 .alt-contact{text-align:center;font-family:var(--sans);font-size:13px;color:var(--text-mid)}
 .alt-contact a{color:var(--gold);text-decoration:none}
-input[type="date"]::-webkit-calendar-picker-indicator,
-input[type="time"]::-webkit-calendar-picker-indicator{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:pointer}
-@media(max-width:700px){nav{padding:18px 24px}.page-body{padding:48px 24px 72px}.form-row{grid-template-columns:1fr}.page-title{font-size:36px}}
+@media(max-width:700px){nav{padding:18px 24px}.page-body{padding:48px 24px 72px}.page-title{font-size:36px}}
 </style>
 </head>
 <body>
@@ -60,100 +35,15 @@ input[type="time"]::-webkit-calendar-picker-indicator{position:absolute;inset:0;
 
 <div class="page-body">
   <h1 class="page-title">Let's make it happen</h1>
-  <p class="page-sub">Tell us about your event and we'll get back within 24 hours with a custom quote.</p>
-  <p class="required-note">Fields marked <span>*</span> are required</p>
+  <p class="page-sub">Click the button below to enquire via WhatsApp. A message template will be ready for you to fill in and send.</p>
 
-  <form action="https://formspree.io/f/mrerbjkp" method="POST">
-    <input type="hidden" name="_redirect" value="https://wa.me/254750566305?text=Hi%20Nomadic%20Alchemy%2C%20I%20just%20submitted%20a%20booking%20enquiry%20on%20your%20website.%20Click%20send%20to%20confirm!" />
-
-    <div class="form-row">
-      <div class="field">
-        <label>Your name <span class="req">*</span></label>
-        <input type="text" name="name" placeholder="Jose Cuervo" required />
-      </div>
-      <div class="field">
-        <label>Phone / WhatsApp <span class="req">*</span></label>
-        <div class="phone-wrap">
-          <div class="phone-code">+</div>
-          <input class="phone-input" type="tel" name="phone" placeholder="254 7XX XXX XXX" required pattern="[0-9\s]{9,15}" title="Enter your number e.g. 254712345678" value="254 " />
-        </div>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="field">
-        <label>Event type</label>
-        <select name="event_type">
-          <option value="">Select event type</option>
-          <option>Wedding / reception</option>
-          <option>Corporate event</option>
-          <option>Private party</option>
-          <option>Birthday</option>
-          <option>Mixology workshop</option>
-          <option>Menu consulting</option>
-          <option>Other</option>
-        </select>
-      </div>
-      <div class="field">
-        <label>Event date <span class="req">*</span></label>
-        <div class="date-wrap">
-          <input type="date" name="event_date" id="eventDate" required />
-          <input type="date" name="event_date" id="eventDateOverlay" style="position:absolute;inset:0;opacity:0;width:100%;cursor:pointer" />
-        </div>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="field">
-        <label>Start time</label>
-        <div class="time-wrap" style="position:relative">
-          <input type="time" name="start_time" id="startTime" />
-        </div>
-      </div>
-      <div class="field">
-        <label>End time</label>
-        <div class="time-wrap" style="position:relative">
-          <input type="time" name="end_time" id="endTime" />
-        </div>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="field">
-        <label>Expected guests</label>
-        <input type="number" name="guests" placeholder="e.g. 80" min="1" />
-      </div>
-      <div class="field">
-        <label>Venue / location <span class="req">*</span></label>
-        <input type="text" name="venue" placeholder="e.g. Karen, Nairobi" required />
-      </div>
-    </div>
-
-    <div class="field">
-      <label>Approximate budget</label>
-      <div class="budget-wrap">
-        <div class="budget-display">KES <span id="budgetVal">49,500</span></div>
-        <input type="range" id="budgetSlider" name="budget_range" min="49500" max="1000000" value="49500" step="500" />
-        <div class="budget-labels"><span>KES 49,500</span><span>KES 1,000,000</span></div>
-        <input type="hidden" name="budget" id="budgetHidden" value="KES 49,500" />
-      </div>
-    </div>
-
-    <div class="field">
-      <label>Tell us more</label>
-      <textarea name="message" placeholder="Vibe, theme, any specific drinks in mind..."></textarea>
-    </div>
-
-    <input type="hidden" name="_subject" value="New event enquiry — Nomadic Alchemy" />
-    <input type="hidden" name="_replyto" value="bookings@nomadicalchemy.co.ke" />
-    <button type="submit" class="submit-btn">Send enquiry</button>
-    <p style="text-align:center; font-size:13px; color:#aaa; margin-top:12px;">Tap WhatsApp and press send to confirm your booking request.</p>
-  </form>
-
-  <a href="https://wa.me/254750566305?text=Hi%20Nomadic%20Alchemy%2C%20I%20just%20submitted%20a%20booking%20enquiry%20on%20your%20website.%20Click%20send%20to%20confirm!" class="whatsapp-btn" target="_blank">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="#25D366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.118 1.528 5.849L.057 23.886l6.196-1.625A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.663-.502-5.193-1.381l-.371-.221-3.853 1.011 1.029-3.752-.242-.385A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-    Confirm Booking via WhatsApp
+  <a href="https://wa.me/254750566305?text=Hi%20Nomadic%20Alchemy!%20I'd%20like%20to%20enquire%20about%20a%20booking.%0A%0APlease%20fill%20in%20your%20details%20below:%0A-%20Your%20Name:%20%0A-%20Event%20Type:%20%0A-%20Expected%20Guests:%20%0A-%20Venue%20/%20Location:%20%0A-%20Tell%20us%20more%20about%20your%20function:%20" 
+     class="submit-btn" 
+     onclick="handleInquiry()">
+    Inquire via WhatsApp
   </a>
+
+  <p style="text-align:center; font-size:13px; color:#aaa; margin-top:12px;">Tap WhatsApp and press send to start your booking request.</p>
 
   <div class="gold-divider"></div>
   <div class="alt-contact">
@@ -162,34 +52,12 @@ input[type="time"]::-webkit-calendar-picker-indicator{position:absolute;inset:0;
 </div>
 
 <script>
-const today = new Date().toISOString().split('T')[0];
-document.getElementById('eventDate').setAttribute('min', today);
-document.getElementById('eventDateOverlay').setAttribute('min', today);
-document.getElementById('eventDateOverlay').addEventListener('change', function(){
-  document.getElementById('eventDate').value = this.value;
-});
-
-const slider = document.getElementById('budgetSlider');
-const display = document.getElementById('budgetVal');
-const hidden = document.getElementById('budgetHidden');
-
-function updateSlider(val){
-  const min = 49500, max = 1000000;
-  const pct = ((val - min) / (max - min)) * 100;
-  slider.style.background = `linear-gradient(to right, #c9a96e 0%, #c9a96e ${pct}%, #ddd6cc ${pct}%, #ddd6cc 100%)`;
-  display.textContent = Number(val).toLocaleString();
-  hidden.value = 'KES ' + Number(val).toLocaleString();
+function handleInquiry() {
+  // Wait 1.5 seconds to ensure WhatsApp opens, then redirect home
+  setTimeout(function() {
+    window.location.href = "https://nomadicalchemy.co.ke/index.html";
+  }, 1500);
 }
-
-slider.addEventListener('input', function(){ updateSlider(this.value); });
-updateSlider(slider.value);
-
-document.querySelectorAll('.time-wrap input[type=time]').forEach(function(el){
-  el.addEventListener('click', function(){ this.showPicker && this.showPicker(); });
-});
-document.querySelectorAll('.date-wrap input[type=date]').forEach(function(el){
-  el.addEventListener('click', function(){ this.showPicker && this.showPicker(); });
-});
 </script>
 </body>
 </html>
