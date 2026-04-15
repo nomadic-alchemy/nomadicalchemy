@@ -72,8 +72,11 @@ input[type="time"]::-webkit-calendar-picker-indicator{position:absolute;inset:0;
   <p class="page-sub">Tell us about your event and we'll get back within 24 hours with a custom quote.</p>
   <p class="required-note">Fields marked <span>*</span> are required</p>
 
-  <form action="https://formspree.io/f/mrerbjkp" method="POST">
-    <input type="hidden" name="_redirect" value="https://linktr.ee/Nomadicalchemy" />
+  <form action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="9837f6a8-35b7-4565-80e7-746e106ca202">
+    <input type="hidden" name="redirect" value="https://linktr.ee/Nomadicalchemy">
+    <input type="hidden" name="subject" value="New event enquiry — Nomadic Alchemy">
+    <input type="hidden" name="from_name" value="Nomadic Alchemy Booking Bot">
 
     <div class="form-row">
       <div class="field">
@@ -114,21 +117,6 @@ input[type="time"]::-webkit-calendar-picker-indicator{position:absolute;inset:0;
 
     <div class="form-row">
       <div class="field">
-        <label>Start time</label>
-        <div class="time-wrap" style="position:relative">
-          <input type="time" name="start_time" id="startTime" />
-        </div>
-      </div>
-      <div class="field">
-        <label>End time</label>
-        <div class="time-wrap" style="position:relative">
-          <input type="time" name="end_time" id="endTime" />
-        </div>
-      </div>
-    </div>
-
-    <div class="form-row">
-      <div class="field">
         <label>Expected guests <span class="req">*</span></label>
         <input type="number" name="guests" placeholder="e.g. 80" min="1" required />
       </div>
@@ -153,8 +141,6 @@ input[type="time"]::-webkit-calendar-picker-indicator{position:absolute;inset:0;
       <textarea name="message" placeholder="Vibe, theme, any specific drinks in mind..."></textarea>
     </div>
 
-    <input type="hidden" name="_subject" value="New event enquiry — Nomadic Alchemy" />
-    <input type="hidden" name="_replyto" value="bookings@nomadicalchemy.co.ke" />
     <button type="submit" class="submit-btn">Send enquiry</button>
   </form>
 
