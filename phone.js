@@ -1,0 +1,71 @@
+/* Shared phone field for every Nomadic Alchemy form.
+   Markup: <div data-phone [data-default="KE"]>
+             <select data-phone-country></select>
+             <input type="tel" data-phone-number required>
+             <input type="hidden" name="phone" data-phone-full>
+             <input type="hidden" name="phone_country" data-phone-country-name>
+           </div>
+   The form submits the full international number (E.164, for example +254712345678)
+   in the "phone" field and the country name in "phone_country". */
+(function(){
+  var COUNTRIES=[["AF","Afghanistan","93",1],["AX","Aland Islands","358",0],["AL","Albania","355",1],["DZ","Algeria","213",1],["AS","American Samoa","1",0],["AD","Andorra","376",1],["AO","Angola","244",1],["AI","Anguilla","1",0],["AG","Antigua and Barbuda","1",0],["AR","Argentina","54",1],["AM","Armenia","374",1],["AW","Aruba","297",1],["AC","Ascension Island","247",1],["AU","Australia","61",1],["AT","Austria","43",1],["AZ","Azerbaijan","994",1],["BS","Bahamas","1",0],["BH","Bahrain","973",1],["BD","Bangladesh","880",1],["BB","Barbados","1",0],["BY","Belarus","375",1],["BE","Belgium","32",1],["BZ","Belize","501",1],["BJ","Benin","229",1],["BM","Bermuda","1",0],["BT","Bhutan","975",1],["BO","Bolivia","591",1],["BQ","Bonaire, Sint Eustatius and Saba","599",0],["BA","Bosnia and Herzegovina","387",1],["BW","Botswana","267",1],["BR","Brazil","55",1],["IO","British Indian Ocean Territory","246",1],["VG","British Virgin Islands","1",0],["BN","Brunei","673",1],["BG","Bulgaria","359",1],["BF","Burkina Faso","226",1],["BI","Burundi","257",1],["KH","Cambodia","855",1],["CM","Cameroon","237",1],["CA","Canada","1",0],["CV","Cape Verde","238",1],["KY","Cayman Islands","1",0],["CF","Central African Republic","236",1],["TD","Chad","235",1],["CL","Chile","56",1],["CN","China","86",1],["CX","Christmas Island","61",0],["CC","Cocos (Keeling) Islands","61",0],["CO","Colombia","57",1],["KM","Comoros","269",1],["CD","Congo (DRC)","243",1],["CG","Congo (Republic)","242",1],["CK","Cook Islands","682",1],["CR","Costa Rica","506",1],["HR","Croatia","385",1],["CU","Cuba","53",1],["CW","Curacao","599",1],["CY","Cyprus","357",1],["CZ","Czechia","420",1],["CI","Côte d'Ivoire","225",1],["DK","Denmark","45",1],["DJ","Djibouti","253",1],["DM","Dominica","1",0],["DO","Dominican Republic","1",0],["EC","Ecuador","593",1],["EG","Egypt","20",1],["SV","El Salvador","503",1],["GQ","Equatorial Guinea","240",1],["ER","Eritrea","291",1],["EE","Estonia","372",1],["SZ","Eswatini","268",1],["ET","Ethiopia","251",1],["FK","Falkland Islands","500",1],["FO","Faroe Islands","298",1],["FJ","Fiji","679",1],["FI","Finland","358",1],["FR","France","33",1],["GF","French Guiana","594",1],["PF","French Polynesia","689",1],["GA","Gabon","241",1],["GM","Gambia","220",1],["GE","Georgia","995",1],["DE","Germany","49",1],["GH","Ghana","233",1],["GI","Gibraltar","350",1],["GR","Greece","30",1],["GL","Greenland","299",1],["GD","Grenada","1",0],["GP","Guadeloupe","590",1],["GU","Guam","1",0],["GT","Guatemala","502",1],["GG","Guernsey","44",0],["GN","Guinea","224",1],["GW","Guinea-Bissau","245",1],["GY","Guyana","592",1],["HT","Haiti","509",1],["HN","Honduras","504",1],["HK","Hong Kong","852",1],["HU","Hungary","36",1],["IS","Iceland","354",1],["IN","India","91",1],["ID","Indonesia","62",1],["IR","Iran","98",1],["IQ","Iraq","964",1],["IE","Ireland","353",1],["IM","Isle of Man","44",0],["IL","Israel","972",1],["IT","Italy","39",1],["JM","Jamaica","1",0],["JP","Japan","81",1],["JE","Jersey","44",0],["JO","Jordan","962",1],["KZ","Kazakhstan","7",0],["KE","Kenya","254",1],["KI","Kiribati","686",1],["XK","Kosovo","383",1],["KW","Kuwait","965",1],["KG","Kyrgyzstan","996",1],["LA","Laos","856",1],["LV","Latvia","371",1],["LB","Lebanon","961",1],["LS","Lesotho","266",1],["LR","Liberia","231",1],["LY","Libya","218",1],["LI","Liechtenstein","423",1],["LT","Lithuania","370",1],["LU","Luxembourg","352",1],["MO","Macau","853",1],["MG","Madagascar","261",1],["MW","Malawi","265",1],["MY","Malaysia","60",1],["MV","Maldives","960",1],["ML","Mali","223",1],["MT","Malta","356",1],["MH","Marshall Islands","692",1],["MQ","Martinique","596",1],["MR","Mauritania","222",1],["MU","Mauritius","230",1],["YT","Mayotte","262",0],["MX","Mexico","52",1],["FM","Micronesia","691",1],["MD","Moldova","373",1],["MC","Monaco","377",1],["MN","Mongolia","976",1],["ME","Montenegro","382",1],["MS","Montserrat","1",0],["MA","Morocco","212",1],["MZ","Mozambique","258",1],["MM","Myanmar","95",1],["NA","Namibia","264",1],["NR","Nauru","674",1],["NP","Nepal","977",1],["NL","Netherlands","31",1],["NC","New Caledonia","687",1],["NZ","New Zealand","64",1],["NI","Nicaragua","505",1],["NE","Niger","227",1],["NG","Nigeria","234",1],["NU","Niue","683",1],["NF","Norfolk Island","672",1],["KP","North Korea","850",1],["MK","North Macedonia","389",1],["MP","Northern Mariana Islands","1",0],["NO","Norway","47",1],["OM","Oman","968",1],["PK","Pakistan","92",1],["PW","Palau","680",1],["PS","Palestine","970",1],["PA","Panama","507",1],["PG","Papua New Guinea","675",1],["PY","Paraguay","595",1],["PE","Peru","51",1],["PH","Philippines","63",1],["PL","Poland","48",1],["PT","Portugal","351",1],["PR","Puerto Rico","1",0],["QA","Qatar","974",1],["RE","Reunion","262",1],["RO","Romania","40",1],["RU","Russia","7",1],["RW","Rwanda","250",1],["BL","Saint Barthelemy","590",0],["SH","Saint Helena","290",1],["KN","Saint Kitts and Nevis","1",0],["LC","Saint Lucia","1",0],["MF","Saint Martin (French part)","590",0],["PM","Saint Pierre and Miquelon","508",1],["VC","Saint Vincent and the Grenadines","1",0],["WS","Samoa","685",1],["SM","San Marino","378",1],["ST","Sao Tome and Principe","239",1],["SA","Saudi Arabia","966",1],["SN","Senegal","221",1],["RS","Serbia","381",1],["SC","Seychelles","248",1],["SL","Sierra Leone","232",1],["SG","Singapore","65",1],["SX","Sint Maarten (Dutch part)","1",0],["SK","Slovakia","421",1],["SI","Slovenia","386",1],["SB","Solomon Islands","677",1],["SO","Somalia","252",1],["ZA","South Africa","27",1],["KR","South Korea","82",1],["SS","South Sudan","211",1],["ES","Spain","34",1],["LK","Sri Lanka","94",1],["SD","Sudan","249",1],["SR","Suriname","597",1],["SJ","Svalbard and Jan Mayen","47",0],["SE","Sweden","46",1],["CH","Switzerland","41",1],["SY","Syria","963",1],["TW","Taiwan","886",1],["TJ","Tajikistan","992",1],["TZ","Tanzania","255",1],["TH","Thailand","66",1],["TL","Timor-Leste","670",1],["TG","Togo","228",1],["TK","Tokelau","690",1],["TO","Tonga","676",1],["TT","Trinidad and Tobago","1",0],["TA","Tristan da Cunha","290",0],["TN","Tunisia","216",1],["TR","Turkey","90",1],["TM","Turkmenistan","993",1],["TC","Turks and Caicos Islands","1",0],["TV","Tuvalu","688",1],["VI","U.S. Virgin Islands","1",0],["UG","Uganda","256",1],["UA","Ukraine","380",1],["AE","United Arab Emirates","971",1],["GB","United Kingdom","44",1],["US","United States","1",1],["UY","Uruguay","598",1],["UZ","Uzbekistan","998",1],["VU","Vanuatu","678",1],["VA","Vatican City","39",0],["VE","Venezuela","58",1],["VN","Vietnam","84",1],["WF","Wallis and Futuna","681",1],["EH","Western Sahara","212",0],["YE","Yemen","967",1],["ZM","Zambia","260",1],["ZW","Zimbabwe","263",1]];
+  var KEEP_ZERO={'39':1,'378':1,'379':1}; // Italy, San Marino, Vatican keep the leading 0
+  function digits(s){ return s.replace(/[^\d]/g,''); }
+
+  function init(root){
+    var sel=root.querySelector('[data-phone-country]'),
+        num=root.querySelector('[data-phone-number]'),
+        full=root.querySelector('[data-phone-full]'),
+        cname=root.querySelector('[data-phone-country-name]'),
+        form=root.closest('form'),
+        def=root.getAttribute('data-default')||'KE',
+        main={};
+    if(!sel||!num) return;
+    COUNTRIES.forEach(function(c){
+      var o=document.createElement('option');
+      o.value=c[0]; o.textContent=c[1]+' (+'+c[2]+')';
+      o.setAttribute('data-dial',c[2]); o.setAttribute('data-name',c[1]);
+      if(c[3]) main[c[2]]=c[0];
+      if(c[0]===def) o.selected=true;
+      sel.appendChild(o);
+    });
+    function current(){ var o=sel.options[sel.selectedIndex]; return {iso:o.value,dial:o.getAttribute('data-dial'),name:o.getAttribute('data-name')}; }
+    function resolve(){
+      var v=num.value.trim(), c=current(), dial=c.dial, iso=c.iso;
+      if(/[^\d\s().\-+]/.test(v)) return {err:'Please use digits only.'};
+      var d=digits(v);
+      if(/^\+/.test(v)||/^00/.test(v)){
+        if(!/^\+/.test(v)) d=d.slice(2);
+        if(d.indexOf(dial)===0){ d=d.slice(dial.length); }
+        else { for(var l=3;l>=1;l--){ var k=d.slice(0,l); if(main[k]){ dial=k; iso=main[k]; d=d.slice(l); break; } } }
+      }
+      if(!KEEP_ZERO[dial]) d=d.replace(/^0+/,'');
+      return {dial:dial,iso:iso,national:d};
+    }
+    function check(){
+      var r=resolve(), msg='';
+      if(r.err) msg=r.err;
+      else if(num.value.trim()!=='' && (r.national.length<5 || r.dial.length+r.national.length>15)) msg='Please enter a valid phone number for the selected country.';
+      num.setCustomValidity(msg);
+      return r;
+    }
+    function apply(){
+      var r=check();
+      if(r.err) return;
+      if(r.iso!==sel.value) sel.value=r.iso;
+      if(num.value.trim()!=='' && r.national.length>=5) num.value=r.national;
+      var c=current();
+      if(full) full.value='+'+c.dial+r.national;
+      if(cname) cname.value=c.name;
+    }
+    num.addEventListener('input',check);
+    num.addEventListener('blur',apply);
+    num.addEventListener('paste',function(){ setTimeout(apply,0); });
+    sel.addEventListener('change',function(){ check(); apply(); });
+    if(form) form.addEventListener('submit',apply);
+    check();
+  }
+
+  function boot(){ [].forEach.call(document.querySelectorAll('[data-phone]'),init); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',boot); else boot();
+})();

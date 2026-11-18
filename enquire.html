@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1013055964388027');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1013055964388027&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Enquire | Nomadic Alchemy Social</title>
+<meta name="description" content="Plan your experience with Nomadic Alchemy Social. Tell us what you are imagining and we will come back with availability and ideas.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Inter:wght@300;400;500&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="social.css">
+</head>
+<body class="enq">
+
+<header class="top">
+  <div class="top-in">
+    <span class="top-tag">Raising the bar</span>
+    <a class="brand" href="social.html" aria-label="Nomadic Alchemy Social home"><img src="images/social/logo-light.png" alt="Nomadic Alchemy Social" width="1100" height="625"></a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="about.html">About</a>
+      <a href="experiences.html">Experiences</a>
+      <a class="btn-olive" href="enquire.html">Enquire</a>
+    </nav>
+  </div>
+</header>
+
+<main class="enq-in">
+  <span class="label">Enquire</span>
+  <h1 class="h-display">Plan Your <span class="h-serif">Experience</span></h1>
+  <div class="intro">
+    <p>Tell us a little about what you're imagining.</p>
+    <p>We'll come back with availability, ideas, and the best way to bring it to life.</p>
+    <p class="req-note">Fields marked * are required</p>
+  </div>
+
+  <!--
+    FORM DELIVERY: this uses the same Web3Forms access key as booking.html, so enquiries
+    arrive in the same inbox as your mobile bar bookings. To route Social enquiries to
+    events@nomadicalchemy.co.ke instead, create a second key at web3forms.com using that
+    address and replace the access_key value below.
+  -->
+  <form class="f" id="enqForm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="9837f6a8-35b7-4565-80e7-746e106ca202">
+    <input type="hidden" name="subject" value="New Nomadic Alchemy Social enquiry">
+    <input type="hidden" name="from_name" value="Nomadic Alchemy Social website">
+    <input type="hidden" name="redirect" value="https://nomadicalchemy.co.ke/social-thank-you.html">
+    <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <div class="f-row">
+      <div><label for="name">Name *</label><input id="name" type="text" name="name" required autocomplete="name"></div>
+      <div><label for="email">Email *</label><input id="email" type="email" name="email" required autocomplete="email"></div>
+    </div>
+
+    <div class="f-one">
+      <label for="phoneNum">Phone number *</label>
+      <div class="phone" data-phone>
+        <select aria-label="Country" autocomplete="off" data-phone-country></select>
+        <input id="phoneNum" type="tel" inputmode="tel" autocomplete="tel-national" required placeholder="712 345 678" aria-describedby="phoneHelp" data-phone-number>
+        <input type="hidden" name="phone" data-phone-full>
+        <input type="hidden" name="phone_country" data-phone-country-name>
+      </div>
+      <span class="help" id="phoneHelp">Choose your country, then enter your number.</span>
+    </div>
+
+    <div class="f-row">
+      <div>
+        <label for="type">Event type *</label>
+        <select id="type" name="event_type" required>
+          <option value="">Choose one</option>
+          <option>Hosted dinner</option>
+          <option>Aperitivo (Cocktail Experience)</option>
+          <option>Brand experience</option>
+          <option>Bespoke experience</option>
+          <option>Not sure yet</option>
+        </select>
+      </div>
+      <div><label for="date">Preferred date *</label><input id="date" type="text" name="preferred_date" required placeholder="Approximate"></div>
+    </div>
+    <div class="f-row">
+      <div><label for="loc">Location *</label><input id="loc" type="text" name="location" required placeholder="Karen, Naivasha, Diani or your venue"></div>
+      <div><label for="guests">Guest count *</label><input id="guests" type="text" name="guests" required placeholder="How many guests?"></div>
+    </div>
+    <div class="f-one"><label for="msg">What are you imagining?</label><textarea id="msg" name="message" placeholder="Tell us a little about the evening, the occasion, the feeling, anything on your mind."></textarea></div>
+    <button type="submit" class="btn-butter">Submit enquiry</button>
+  </form>
+
+  <div class="enq-facts">
+    <div><span class="label">Regions</span><p>Nairobi, Mombasa, Kisumu, Kiambu, Nakuru and Naivasha</p></div>
+    <div><span class="label">Guest count</span><p>Intimate tables to larger gatherings</p></div>
+    <div><span class="label">Lead time</span><p>Three weeks, ideally</p></div>
+  </div>
+</main>
+<script src="phone.js"></script>
+
+<footer>
+  <div class="foot-in">
+    <div class="foot-grid">
+      <div>
+        <a class="foot-brand" href="social.html" aria-label="Nomadic Alchemy Social home"><img src="images/social/logo-light.png" alt="Nomadic Alchemy Social" width="1100" height="625"></a>
+        <p>Raising the bar since 2024.</p>
+      </div>
+      <div class="foot-col">
+        <span class="label">Pages</span>
+        <a href="about.html">About</a>
+        <a href="experiences.html">Experiences</a>
+        <a href="enquire.html">Enquire</a>
+        <a href="index.html">Mobile bar</a>
+      </div>
+      <div class="foot-col">
+        <span class="label">Contact</span>
+        <a class="mail" href="mailto:events@nomadicalchemy.co.ke">events@nomadicalchemy.co.ke</a>
+        <a href="https://wa.me/254750566305">+254 750 566 305</a>
+        <a href="https://www.instagram.com/nomadicalchemy.social" target="_blank" rel="noopener">Instagram</a>
+        <div class="areas">Nairobi / Mombasa / Kisumu / Kiambu / Nakuru / Naivasha</div>
+      </div>
+    </div>
+    <div class="foot-base">&copy; 2026 Nomadic Alchemy</div>
+  </div>
+</footer>
+
+</body>
+</html>

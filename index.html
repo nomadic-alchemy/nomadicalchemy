@@ -54,14 +54,18 @@ nav{display:flex;justify-content:space-between;align-items:center;padding:20px 5
 .section-left{margin-bottom:52px}
 .section-left h2{font-family:var(--serif);font-size:42px;font-weight:300;color:var(--text-dark);margin-bottom:8px}
 .section-left p{font-family:var(--sans);font-size:13px;color:var(--text-mid)}
-.services-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px}
-.svc{background:#fff;padding:40px 32px;border:1px solid #e8e0d4;transition:border-color 0.2s}
+.services-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2px}
+.svc{background:#fff;padding:40px 32px;border:1px solid #e8e0d4;transition:border-color 0.2s;display:flex;flex-direction:column;text-decoration:none;color:inherit}
 .svc:hover{border-color:var(--gold)}
 .svc-num{font-family:var(--sans);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--gold);margin-bottom:20px}
 .svc h3{font-family:var(--serif);font-size:24px;font-weight:400;color:var(--text-dark);margin-bottom:14px}
 .svc p{font-family:var(--sans);font-size:13px;color:var(--text-mid);line-height:1.8}
 .svc-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:20px}
 .tag{font-family:var(--sans);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold-light);padding:4px 10px}
+.svc-cta-wrap{margin-top:auto;padding-top:28px}
+.svc-cta{display:inline-block;font-family:var(--sans);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-dark);border-bottom:1px solid var(--gold);padding-bottom:4px;transition:color 0.2s}
+.svc:hover .svc-cta{color:var(--gold)}
+.svc:focus-visible{outline:2px solid var(--gold);outline-offset:-2px}
 
 .reviews{background:var(--dark);padding:88px 56px}
 .section-center{text-align:center;margin-bottom:60px}
@@ -161,7 +165,7 @@ footer{background:var(--dark);padding:36px 56px;display:grid;grid-template-colum
     <p>Full service mobile bartending and beyond</p>
   </div>
   <div class="services-grid">
-    <div class="svc">
+    <a class="svc" href="booking.html">
       <div class="svc-num">01</div>
       <h3>Mobile bar service</h3>
       <p>Weddings, corporate events, private parties — we bring the full bar setup to you. Professional bartenders, quality ingredients, seamless service from first pour to last call.</p>
@@ -170,8 +174,9 @@ footer{background:var(--dark);padding:36px 56px;display:grid;grid-template-colum
         <span class="tag">Corporate</span>
         <span class="tag">Private parties</span>
       </div>
-    </div>
-    <div class="svc">
+      <div class="svc-cta-wrap"><span class="svc-cta">Get a quote</span></div>
+    </a>
+    <a class="svc" href="workshops.html">
       <div class="svc-num">02</div>
       <h3>Mixology workshops</h3>
       <p>Hands-on classes for enthusiasts and hospitality staff alike. Learn proper techniques, flavor balance, and recipes that work in the real world — whether you're leveling up your home bar or training your team to pour with confidence.</p>
@@ -180,9 +185,21 @@ footer{background:var(--dark);padding:36px 56px;display:grid;grid-template-colum
         <span class="tag">Staff training</span>
         <span class="tag">Techniques</span>
       </div>
-    </div>
-    <div class="svc">
+      <div class="svc-cta-wrap"><span class="svc-cta">Get a quote</span></div>
+    </a>
+    <a class="svc" href="social.html">
       <div class="svc-num">03</div>
+      <h3>Bespoke event planning</h3>
+      <p>Hosted dinners, aperitivos and brand experiences designed around you. We plan every detail and run the evening quietly, so you can stay present for the people you invited.</p>
+      <div class="svc-tags">
+        <span class="tag">Private</span>
+        <span class="tag">Brand</span>
+        <span class="tag">Bespoke</span>
+      </div>
+      <div class="svc-cta-wrap"><span class="svc-cta">Explore Nomadic Alchemy Social</span></div>
+    </a>
+    <a class="svc" href="consulting.html">
+      <div class="svc-num">04</div>
       <h3>Cocktail menu consulting</h3>
       <p>Running a restaurant or hotel and need a cocktail menu that actually works? We design drink programs that fit your concept, your crowd, and your kitchen's reality — menus your staff can execute and your guests will order.</p>
       <div class="svc-tags">
@@ -190,7 +207,8 @@ footer{background:var(--dark);padding:36px 56px;display:grid;grid-template-colum
         <span class="tag">Hotels</span>
         <span class="tag">Menu design</span>
       </div>
-    </div>
+      <div class="svc-cta-wrap"><span class="svc-cta">Get a quote</span></div>
+    </a>
   </div>
 </section>
 

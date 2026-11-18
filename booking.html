@@ -61,6 +61,12 @@ src="https://www.facebook.com/tr?id=1013055964388027&ev=PageView&noscript=1"
         
         input[type="date"], input[type="time"] { cursor: pointer; }
 
+        .form-one { margin-bottom: 20px; }
+        .phone-field { display: flex; }
+        .phone-field select { flex: 0 0 44%; width: 44%; min-width: 0; border-right: none; text-overflow: ellipsis; background: #f9f6f1; }
+        .phone-field input[type="tel"] { flex: 1; min-width: 0; }
+        .field input:user-invalid, .field select:user-invalid { border-color: #c47a6a; }
+
         .phone-wrap { display: flex; }
         .phone-code { padding: 14px; border: 1px solid #ddd6cc; border-right: none; background: #f9f6f1; font-size: 14px; color: #444; }
 
@@ -112,15 +118,22 @@ src="https://www.facebook.com/tr?id=1013055964388027&ev=PageView&noscript=1"
         
         <div class="form-row">
             <div class="field">
-                <label>Your Name *</label>
-                <input type="text" name="name" placeholder="Jose Cuervo" required>
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" placeholder="Jose Cuervo" required autocomplete="name">
             </div>
             <div class="field">
-                <label>Phone / WhatsApp *</label>
-                <div class="phone-wrap">
-                    <div class="phone-code">+</div>
-                    <input type="tel" name="phone" placeholder="254 7XX XXX XXX" required style="border-left:none;">
-                </div>
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+        </div>
+
+        <div class="form-one field">
+            <label for="phone">Phone / WhatsApp *</label>
+            <div class="phone-field" data-phone>
+                <select aria-label="Country" autocomplete="off" data-phone-country></select>
+                <input type="tel" id="phone" inputmode="tel" autocomplete="tel-national" placeholder="712 345 678" required data-phone-number>
+                <input type="hidden" name="phone" data-phone-full>
+                <input type="hidden" name="phone_country" data-phone-country-name>
             </div>
         </div>
 
@@ -192,6 +205,7 @@ src="https://www.facebook.com/tr?id=1013055964388027&ev=PageView&noscript=1"
     </a>
 </div>
 
+<script src="phone.js"></script>
 <script>
     const slider = document.getElementById('budgetSlider');
     const display = document.getElementById('budgetVal');

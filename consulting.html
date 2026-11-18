@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1013055964388027');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1013055964388027&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cocktail Menu Consulting Quote | Nomadic Alchemy</title>
+<meta name="description" content="Request a quote for cocktail menu design and drink program consulting for restaurants, hotels and venues in Kenya.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="quote.css">
+</head>
+<body>
+
+<div class="page-body">
+    <a class="back" href="index.html#services">Back to services</a>
+    <h1 class="page-title">Let's build your menu</h1>
+    <p class="page-sub">Tell us about your venue and we'll get back within 24 hours with a custom quote.</p>
+    <p class="required-note">Fields marked * are required</p>
+
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="9837f6a8-35b7-4565-80e7-746e106ca202">
+        <input type="hidden" name="subject" value="New cocktail menu consulting quote request">
+        <input type="hidden" name="from_name" value="Nomadic Alchemy website">
+        <input type="hidden" name="redirect" value="https://nomadicalchemy.co.ke/thank-you.html">
+        <input type="checkbox" name="botcheck" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+        <div class="form-row">
+            <div class="field">
+                <label for="name">Your Name *</label>
+                <input type="text" id="name" name="name" required autocomplete="name">
+            </div>
+            <div class="field">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required autocomplete="email">
+            </div>
+        </div>
+
+        <div class="form-one field">
+            <label for="phone">Phone / WhatsApp *</label>
+            <div class="phone-field" data-phone>
+                <select aria-label="Country" autocomplete="off" data-phone-country></select>
+                <input type="tel" id="phone" inputmode="tel" autocomplete="tel-national" placeholder="712 345 678" required data-phone-number>
+                <input type="hidden" name="phone" data-phone-full>
+                <input type="hidden" name="phone_country" data-phone-country-name>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="field">
+                <label for="business">Business Name *</label>
+                <input type="text" id="business" name="business_name" required autocomplete="organization">
+            </div>
+            <div class="field">
+                <label for="btype">Business Type *</label>
+                <select id="btype" name="business_type" required>
+                    <option value="">Select one</option>
+                    <option>Restaurant</option>
+                    <option>Hotel or lodge</option>
+                    <option>Bar or lounge</option>
+                    <option>Event venue</option>
+                    <option>Other</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="field">
+                <label for="venue">Location *</label>
+                <input type="text" id="venue" name="location" placeholder="e.g. Karen, Nairobi" required>
+            </div>
+            <div class="field">
+                <label for="stage">What You Need *</label>
+                <select id="stage" name="project_type" required>
+                    <option value="">Select one</option>
+                    <option>A menu for a new concept</option>
+                    <option>A refresh of our current menu</option>
+                    <option>A seasonal or special menu</option>
+                    <option>A full drink program with staff training</option>
+                    <option>Not sure yet</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="field">
+                <label for="count">Cocktails on the Menu</label>
+                <select id="count" name="menu_size">
+                    <option value="">Not sure yet</option>
+                    <option>4 to 6</option>
+                    <option>7 to 10</option>
+                    <option>11 or more</option>
+                </select>
+            </div>
+            <div class="field">
+                <label for="eventDate">Target Launch Date</label>
+                <input type="date" id="eventDate" name="target_launch" onclick="this.showPicker()">
+            </div>
+        </div>
+
+        <div class="form-row">
+            <div class="field">
+                <label for="team">Bar Team Size</label>
+                <input type="text" id="team" name="bar_team_size" placeholder="e.g. 4 bartenders">
+            </div>
+            <div class="field">
+                <label for="budget">Budget</label>
+                <input type="text" id="budget" name="budget" placeholder="A range, if you have one">
+            </div>
+        </div>
+
+        <div class="form-one field" style="margin-bottom: 30px;">
+            <label for="message">Tell Us More</label>
+            <textarea id="message" name="message" placeholder="Your concept, your crowd, what is and is not working on the current menu..." style="height: 100px;"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">Request a quote</button>
+    </form>
+
+    <p class="ux-note">Prefer WhatsApp? Tap below and press send to start the conversation.</p>
+
+    <a href="https://wa.me/254750566305?text=Hello%20Nomadic%20Alchemy%2C%20I%27d%20like%20a%20quote%20for%20cocktail%20menu%20consulting.%0A%0AName%3A%20%0ABusiness%3A%20%0ABusiness%20type%3A%20%0ALocation%3A%20%0AWhat%20I%20need%3A%20%0A" class="whatsapp-btn" target="_blank" rel="noopener">
+        <svg class="whatsapp-icon" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.123.555 4.118 1.528 5.849L.057 23.886l6.196-1.625A11.945 11.945 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22c-1.891 0-3.663-.502-5.193-1.381l-.371-.221-3.853 1.011 1.029-3.752-.242-.385A9.953 9.953 0 012 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
+        CONTINUE ON WHATSAPP
+    </a>
+</div>
+
+<script src="phone.js"></script>
+<script>
+    var d = document.getElementById('eventDate');
+    if (d) d.setAttribute('min', new Date().toISOString().split('T')[0]);
+</script>
+
+</body>
+</html>
